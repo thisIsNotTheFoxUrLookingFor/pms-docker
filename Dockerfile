@@ -20,8 +20,8 @@ RUN useradd -U -d /config -s /bin/false plex && \
 
 RUN \
 # Update and get dependencies
-    apt-get update && \
-    apt-get install -y \
+    apt-get update && apt-get upgrade -yq && \
+    apt-get install -yq \
       tzdata \
       curl \
       xmlstarlet \

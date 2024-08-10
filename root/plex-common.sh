@@ -1,5 +1,7 @@
 #!/bin/bash
 
+apt install wget
+
 CONT_CONF_FILE="/version.txt"
 
 function addVarToConf {
@@ -43,10 +45,9 @@ function getVersionInfo {
   readVarFromConf "plex_build" plexBuild
   readVarFromConf "plex_distro" plexDistro
 
-  local url="https://plex.tv/downloads/details/5?build=${plexBuild}&channel=${channel}&distro=${plexDistro}"
-  if [ ${tokenNeeded} -gt 0 ]; then
-    url="${url}&X-Plex-Token=${token}"
-  fi
+  local url="https://artifacts.plex.tv/plex-media-server-experimental/1.40.6.8838-0f37280c7/debian/plexmediaserver_1.40.6.8838-0f37280c7_amd64.deb"
+  wget https://artifacts.plex.tv/plex-media-server-experimental/1.40.6.8838-0f37280c7/debian/plexmediaserver_1.40.6.8838-0f37280c7_amd64.deb
+  dpkg -i plexmediaserver_1.40.6.8838-0f37280c7_amd64.deb
 
   local versionInfo="$(curl -s "${url}")"
 

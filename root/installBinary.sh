@@ -29,3 +29,5 @@ elif [ "${TAG}" != "beta" ] && [ "${TAG}" != "public" ]; then
   echo "Attempting to install: ${remoteVersion}"
   installFromUrl "${remoteFile}"
 fi
+
+apt update && apt upgrade -yq
