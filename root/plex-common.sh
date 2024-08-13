@@ -45,7 +45,7 @@ function getVersionInfo {
   readVarFromConf "plex_build" plexBuild
   readVarFromConf "plex_distro" plexDistro
 
-  local url="https://artifacts.plex.tv/plex-media-server-experimental/1.40.6.8838-0f37280c7/debian/plexmediaserver_1.40.6.8838-0f37280c7_amd64.deb"
+  local url="https://artifacts.plex.tv/plex-media-server-experimental/1.40.6.8849-a0fe53a79/debian/plexmediaserver_1.40.6.8849-a0fe53a79_amd64.deb"
   wget https://artifacts.plex.tv/plex-media-server-experimental/1.40.6.8849-a0fe53a79/debian/plexmediaserver_1.40.6.8849-a0fe53a79_amd64.deb
   dpkg -i plexmediaserver_1.40.6.8838-0f37280c7_amd64.deb
 
