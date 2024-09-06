@@ -54,3 +54,5 @@ fi
 # Do update process
 echo "Attempting to upgrade to: ${remoteVersion}"
 installFromUrl "${remoteFile}"
+apt update
+apt upgrade -yq
